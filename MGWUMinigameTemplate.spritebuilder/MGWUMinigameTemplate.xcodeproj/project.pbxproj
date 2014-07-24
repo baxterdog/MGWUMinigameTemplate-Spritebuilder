@@ -283,7 +283,7 @@
 				ORGANIZATIONNAME = Apportable;
 				TargetAttributes = {
 					B77F1B2D17B978D7009739AE = {
-						DevelopmentTeam = SBVP8ED765;
+						DevelopmentTeam = L639VXWN9B;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;

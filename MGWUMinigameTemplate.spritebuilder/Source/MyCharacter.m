@@ -13,6 +13,9 @@
     BOOL _isJumping;
     BOOL _isFalling;
     BOOL _isLanding;
+    BOOL _isWalkingRight;
+    BOOL _isWalkingLeft;
+    BOOL _isStandingStill;
 }
 
 -(id)init {
@@ -50,7 +53,8 @@
     // The animation should be idle if the character was and is stationary
     // The character may only start idling if he or she was not already idling or falling
     if (_velYPrev == 0 && self.physicsBody.velocity.y == 0 && !_isIdling && !_isFalling) {
-        [self resetBools];
+        CCLOG(@"IN updateAnimations _isIdling");
+       [self resetBools];
         _isIdling = YES;
         [self.animationManager runAnimationsForSequenceNamed:@"AnimIsoIdling"];
     }
@@ -58,6 +62,7 @@
     // The animation should be jumping if the character wasn't moving up, but now is
     // The character may only start jumping if he or she was idling and isn't jumping
     else if (_velYPrev == 0 && self.physicsBody.velocity.y > 0 && _isIdling && !_isJumping) {
+        CCLOG(@"IN updateAnimations _isJumping");
         [self resetBools];
         _isJumping = YES;
         [self.animationManager runAnimationsForSequenceNamed:@"AnimIsoJump"];
@@ -66,6 +71,7 @@
     // The animation should be falling if the character's moving down, but was moving up or stalled
     // The character may only start falling if he or she was jumping and isn't falling
     else if (_velYPrev >= 0 && self.physicsBody.velocity.y < 0 && _isJumping && !_isFalling) {
+        CCLOG(@"IN updateAnimations _isFalling");
         [self resetBools];
         _isFalling = YES;
         [self.animationManager runAnimationsForSequenceNamed:@"AnimIsoFalling" tweenDuration:0.5f];
@@ -74,6 +80,7 @@
     // The animation sholud be landing if the character's stopped moving down (hit something)
     // The character may only start landing if he or she was falling and isn't landing
     else if (_velYPrev < 0 && self.physicsBody.velocity.y >= 0 && _isFalling && !_isLanding) {
+        CCLOG(@"IN updateAnimations _isLanding");
         [self resetBools];
         _isLanding = YES;
         [self.animationManager runAnimationsForSequenceNamed:@"AnimIsoLand"];
@@ -90,12 +97,43 @@
     _isJumping = NO;
     _isFalling = NO;
     _isLanding = NO;
+//
+// _isWalkingRight = NO;
+// _isStandingStill = NO;
 }
 
 // This method tells the character to jump by giving it an upward velocity.
 // It's been added to a physics node in the main scene, like the penguins Peeved Penguins, so it will fall automatically!
 -(void)jump {
-    self.physicsBody.velocity = ccp(0,122);
+    CCLOG(@"Jump Button Pressed");
+    self.physicsBody.velocity = ccp(0,100);
+    if(_isStandingStill){
+        self.physicsBody.velocity = ccp(0,100);
+    }else{
+        if(_isWalkingLeft){
+            self.physicsBody.velocity = ccp(-25,100);
+        }else{
+            self.physicsBody.velocity = ccp(25,100);
+        }
+    }
+}
+
+-(void)right {
+    CCLOG(@"Right Button Pressed");
+    self.physicsBody.velocity = ccp(25,0);
+    [self.animationManager runAnimationsForSequenceNamed:@"AnimSideWalking"];
+    _isWalkingLeft = NO;
+    _isWalkingRight = YES;
+    _isStandingStill = NO;
+
+}
+
+-(void)left {
+    CCLOG(@"Left Button Pressed");
+    self.physicsBody.velocity = ccp(-25,0);
+    _isWalkingLeft = YES;
+    _isWalkingRight = NO;
+    _isStandingStill = NO;
 }
 
 @end

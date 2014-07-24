@@ -12,7 +12,7 @@
 -(id)init {
     if ((self = [super init])) {
         // Initialize any arrays, dictionaries, etc in here
-        self.instructions = @"These are the game instructions :D";
+        self.instructions = @"JumpEgypt";
     }
     return self;
 }
@@ -21,7 +21,7 @@
     // Set up anything connected to Sprite Builder here
     
     // We're calling a public method of the character that tells it to jump!
-    [self.hero jump];
+    //[self.hero jump];
 }
 
 -(void)onEnter {
@@ -38,7 +38,23 @@
 -(void)endMinigame {
     // Be sure you call this method when you end your minigame!
     // Of course you won't have a random score, but your score *must* be between 1 and 100 inclusive
-    [self endMinigameWithScore:arc4random()%100 + 1];
+    [self endMinigameWithScore:100]; //    [self endMinigameWithScore:arc4random()%100 + 1];
+}
+
+-(void)jumpButton{
+    [self.hero jump];
+}
+
+-(void)rightButton{
+    [self.hero right];
+}
+
+-(void)leftButton{
+    [self.hero left];
+}
+
+-(void)throwButton{
+    //[self.hero jump];
 }
 
 // DO NOT DELETE!
