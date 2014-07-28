@@ -12,7 +12,7 @@
 -(id)init {
     if ((self = [super init])) {
         // Initialize any arrays, dictionaries, etc in here
-        self.instructions = @"JumpEgypt";
+        self.instructions = @"JumpEgypt By Baxter";
     }
     return self;
 }

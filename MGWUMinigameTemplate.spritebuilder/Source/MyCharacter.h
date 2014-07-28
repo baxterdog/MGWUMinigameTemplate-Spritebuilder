@@ -12,5 +12,7 @@
 -(void)jump;
 -(void)right;
 -(void)left;
+-(void)rightRun;
+-(void)leftRun;
 
 @end
