@@ -14,7 +14,10 @@
     BOOL _isFalling;
     BOOL _isLanding;
     BOOL _isWalkingRight;
+<<<<<<< HEAD
     BOOL _isWalking;
+=======
+>>>>>>> 29c78b51911bc540ab97fc7934c51109ffda9ae9
     NSInteger _horizontalIncrement;
     NSInteger _verticalIncrement;
 }
@@ -29,9 +32,15 @@
         // by default, a BOOL's value is NO, so the other BOOLs are NO right now
     }
     _verticalIncrement = 200;
+<<<<<<< HEAD
     _horizontalIncrement = 40;
     _isWalkingRight = YES;
     _isWalking = YES;
+=======
+    _horizontalIncrement = 50;
+    _isWalkingRight = false;
+    
+>>>>>>> 29c78b51911bc540ab97fc7934c51109ffda9ae9
     return self;
 }
 
@@ -53,6 +62,7 @@
     [self updateAnimations:delta];
 }
 
+<<<<<<< HEAD
 // cclog("float and int and string: %4.2f, %#x, %s", 3.1415926, 2014, "cocos2d-x");
 // CCLOG("Characters: %c %c", 'a', 65);
 // CCLOG("Decimals: %d %ld", 1977, 650000L);
@@ -259,11 +269,25 @@
         _isLanding = YES;
         [self.animationManager runAnimationsForSequenceNamed:@"AnimIsoLand"];
     }
+=======
+
+-(void)updateAnimations:(CCTime)delta {
+    //CCLOG(@"_isWalkingRight: %d",_isWalkingRight);
+>>>>>>> 29c78b51911bc540ab97fc7934c51109ffda9ae9
     
-    // We track the previous velocity, since it's important to determining how the character is and was moving for animations
-    _velYPrev = self.physicsBody.velocity.y;
     
+<<<<<<< HEAD
 } */
+=======
+    if(_isWalkingRight){
+        //self.physicsBody.velocity = ccp(_horizontalIncrement,0);
+        //[self.animationManager runAnimationsForSequenceNamed:@"AnimSideWalking"];
+    }else{
+        //self.physicsBody.velocity = ccp(-_horizontalIncrement,0);
+        //[self.animationManager runAnimationsForSequenceNamed:@"AnimSideWalkingLeft"];
+    }
+}
+>>>>>>> 29c78b51911bc540ab97fc7934c51109ffda9ae9
 
 // This method is called before setting one to YES, so that only one is ever YES at a time
 -(void)resetBools {
@@ -281,7 +305,11 @@
 -(void)jump {
     CCLOG(@"Jump Button Pressed");
     //if(self.physicsBody.velocity.x == 0){
+<<<<<<< HEAD
         self.physicsBody.velocity = ccp(0,_verticalIncrement);
+=======
+        //self.physicsBody.velocity = ccp(0,_verticalIncrement);
+>>>>>>> 29c78b51911bc540ab97fc7934c51109ffda9ae9
         if(_isWalkingRight){
             self.physicsBody.velocity = ccp(_horizontalIncrement,_verticalIncrement);
         }else{
@@ -291,17 +319,31 @@
 }
 
 -(void)right {
+<<<<<<< HEAD
     CCLOG(@"Right Button Pressed");
     _isWalkingRight = YES;
     [self.animationManager runAnimationsForSequenceNamed:@"AnimSideWalking"];
     [self rightRun];
 
+=======
+    CCLOG(@"Right Button Pressed - AnimSideWalking");
+        self.physicsBody.velocity = ccp(_horizontalIncrement,0);
+        [self.animationManager runAnimationsForSequenceNamed:@"AnimSideWalking"];
+        _isWalkingRight = YES;
+>>>>>>> 29c78b51911bc540ab97fc7934c51109ffda9ae9
 }
 -(void)left {
+<<<<<<< HEAD
     CCLOG(@"Left Button Pressed");
     _isWalkingRight = NO;
     [self.animationManager runAnimationsForSequenceNamed:@"AnimSideWalkingLeft"];
     [self leftRun];
+=======
+    CCLOG(@"Left Button Pressed - AnimSideWalkingLeft");
+        self.physicsBody.velocity = ccp(-_horizontalIncrement,0);
+        [self.animationManager runAnimationsForSequenceNamed:@"AnimSideWalkingLeft"];
+        _isWalkingRight = NO;
+>>>>>>> 29c78b51911bc540ab97fc7934c51109ffda9ae9
 }
 
 -(void)rightRun {
@@ -316,4 +358,120 @@
 
 
 @end
+<<<<<<< HEAD
     
+=======
+
+
+
+/*-(void)updateAnimations:(CCTime)delta {
+ 
+ // IDLE
+ // The animation should be idle if the character was and is stationary
+ // The character may only start idling if he or she was not already idling or falling
+ if (_velYPrev == 0 && self.physicsBody.velocity.y == 0 && !_isIdling && !_isFalling) {
+ CCLOG(@"IN updateAnimations _isIdling");
+ [self resetBools];
+ _isIdling = YES;
+ 
+ if(_isWalkingRight){
+ [self.animationManager runAnimationsForSequenceNamed:@"AnimSideWalking"];
+ }else{
+ [self.animationManager runAnimationsForSequenceNamed:@"AnimSideWalkingLeft"];
+ }
+ 
+ }
+ // JUMP
+ // The animation should be jumping if the character wasn't moving up, but now is
+ // The character may only start jumping if he or she was idling and isn't jumping
+ else if (_velYPrev == 0 && self.physicsBody.velocity.y > 0 && _isIdling && !_isJumping) {
+ CCLOG(@"IN updateAnimations _isJumping");
+ [self resetBools];
+ _isJumping = YES;
+ if(_isWalkingRight){
+ CCLOG(@"IN updateAnimations AnimSideJump");
+ [self.animationManager runAnimationsForSequenceNamed:@"AnimSideJump"];
+ }else{
+ CCLOG(@"IN updateAnimations AnimSideJumpLeft");
+ [self.animationManager runAnimationsForSequenceNamed:@"AnimSideJumpLeft"];
+ }
+ }
+ // FALLING
+ // The animation should be falling if the character's moving down, but was moving up or stalled
+ // The character may only start falling if he or she was jumping and isn't falling
+ else if (_velYPrev >= 0 && self.physicsBody.velocity.y < 0 && _isJumping && !_isFalling) {
+ CCLOG(@"IN updateAnimations _isFalling");
+ [self resetBools];
+ _isFalling = YES;
+ if(_isWalkingRight){
+ CCLOG(@"IN updateAnimations AnimSideFalling");
+ [self.animationManager runAnimationsForSequenceNamed:@"AnimSideFalling" tweenDuration:0.5f];
+ }else{
+ CCLOG(@"IN updateAnimations AnimSideFallingLeft");
+ [self.animationManager runAnimationsForSequenceNamed:@"AnimSideFallingLeft" tweenDuration:0.5f];
+ }
+ }
+ // LANDING
+ // The animation sholud be landing if the character's stopped moving down (hit something)
+ // The character may only start landing if he or she was falling and isn't landing
+ else if (_velYPrev < 0 && self.physicsBody.velocity.y >= 0 && _isFalling && !_isLanding) {
+ CCLOG(@"IN updateAnimations _isLanding");
+ [self resetBools];
+ _isLanding = YES;
+ if(_isWalkingRight){
+ CCLOG(@"IN updateAnimations AnimSideLand");
+ [self.animationManager runAnimationsForSequenceNamed:@"AnimSideLand"];
+ }else{
+ CCLOG(@"IN updateAnimations AnimSideLandLeft");
+ [self.animationManager runAnimationsForSequenceNamed:@"AnimSideLandLeft"];
+ }
+ }
+ 
+ // We track the previous velocity, since it's important to determining how the character is and was moving for animations
+ _velYPrev = self.physicsBody.velocity.y;
+ 
+ }
+ 
+ -(void)updateAnimations:(CCTime)delta {
+ // IDLE
+ // The animation should be idle if the character was and is stationary
+ // The character may only start idling if he or she was not already idling or falling
+ if (_velYPrev == 0 && self.physicsBody.velocity.y == 0 && !_isIdling && !_isFalling) {
+ CCLOG(@"IN updateAnimations _isIdling");
+ [self resetBools];
+ _isIdling = YES;
+ [self.animationManager runAnimationsForSequenceNamed:@"AnimIsoIdling"];
+ }
+ // JUMP
+ // The animation should be jumping if the character wasn't moving up, but now is
+ // The character may only start jumping if he or she was idling and isn't jumping
+ else if (_velYPrev == 0 && self.physicsBody.velocity.y > 0 && _isIdling && !_isJumping) {
+ CCLOG(@"IN updateAnimations _isJumping");
+ [self resetBools];
+ _isJumping = YES;
+ [self.animationManager runAnimationsForSequenceNamed:@"AnimIsoJump"];
+ }
+ // FALLING
+ // The animation should be falling if the character's moving down, but was moving up or stalled
+ // The character may only start falling if he or she was jumping and isn't falling
+ else if (_velYPrev >= 0 && self.physicsBody.velocity.y < 0 && _isJumping && !_isFalling) {
+ CCLOG(@"IN updateAnimations _isFalling");
+ [self resetBools];
+ _isFalling = YES;
+ [self.animationManager runAnimationsForSequenceNamed:@"AnimIsoFalling" tweenDuration:0.5f];
+ }
+ // LANDING
+ // The animation sholud be landing if the character's stopped moving down (hit something)
+ // The character may only start landing if he or she was falling and isn't landing
+ else if (_velYPrev < 0 && self.physicsBody.velocity.y >= 0 && _isFalling && !_isLanding) {
+ CCLOG(@"IN updateAnimations _isLanding");
+ [self resetBools];
+ _isLanding = YES;
+ [self.animationManager runAnimationsForSequenceNamed:@"AnimIsoLand"];
+ }
+ 
+ // We track the previous velocity, since it's important to determining how the character is and was moving for animations
+ _velYPrev = self.physicsBody.velocity.y;
+ 
+ } */
+>>>>>>> 29c78b51911bc540ab97fc7934c51109ffda9ae9
