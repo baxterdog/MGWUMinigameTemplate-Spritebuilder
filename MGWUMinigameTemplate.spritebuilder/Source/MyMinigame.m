@@ -3,8 +3,7 @@
 //
 //  Created by Zachary Barryte on 6/6/14.
 //  Copyright 2014 Apportable. All rights reserved.
-//  07-27-14 820pm
-
+//  07_28_14_12_56am_v0.08c08
 #import "MyMinigame.h"
 
 @implementation MyMinigame
