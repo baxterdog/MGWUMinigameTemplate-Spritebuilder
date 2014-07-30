@@ -9,7 +9,10 @@
 #import "MGWUMinigame.h"
 #import "MyCharacter.h"
 
-@interface MyMinigame : MGWUMinigame
+@interface MyMinigame : MGWUMinigame <CCPhysicsCollisionDelegate>
+
+//-(void)removeDiamond;
+
 
 // DO NOT DELETE!
 @property (nonatomic,retain) MyCharacter *hero;

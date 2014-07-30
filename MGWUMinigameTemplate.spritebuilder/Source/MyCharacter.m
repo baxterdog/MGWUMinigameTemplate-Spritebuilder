@@ -6,6 +6,7 @@
 
 #import "MyCharacter.h"
 
+
 @implementation MyCharacter {
     float _velYPrev; // this tracks the previous velocity, it's used for animation
     BOOL _isIdling; // these BOOLs track what animations have been triggered.  By default, they're set to NO
@@ -16,6 +17,7 @@
     BOOL _isWalking;
     NSInteger _horizontalIncrement;
     NSInteger _verticalIncrement;
+
 }
 
 -(id)init {
@@ -33,6 +35,9 @@
     _isWalking = YES;
     _horizontalIncrement = 50;
     _isWalkingRight = false;
+    
+
+
     
     return self;
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DAC09D019898D6C00AA3709 /* DiamondScoreBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC09CF19898D6C00AA3709 /* DiamondScoreBoard.m */; };
+		2DCA70C61986E1ED00308BF3 /* Diamond.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA70C51986E1ED00308BF3 /* Diamond.m */; };
+		2DD6D6A219875FC40081FD5B /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6D6A119875FC40081FD5B /* GameData.m */; };
 		65400FAB19743FE200EDBBED /* MGWUMinigameInstructions.m in Sources */ = {isa = PBXBuildFile; fileRef = 65400FAA19743FE200EDBBED /* MGWUMinigameInstructions.m */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
@@ -61,6 +64,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2DAC09CE19898D6C00AA3709 /* DiamondScoreBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiamondScoreBoard.h; path = Source/DiamondScoreBoard.h; sourceTree = "<group>"; };
+		2DAC09CF19898D6C00AA3709 /* DiamondScoreBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiamondScoreBoard.m; path = Source/DiamondScoreBoard.m; sourceTree = "<group>"; };
+		2DCA70C41986E1ED00308BF3 /* Diamond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Diamond.h; path = Source/Diamond.h; sourceTree = "<group>"; };
+		2DCA70C51986E1ED00308BF3 /* Diamond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Diamond.m; path = Source/Diamond.m; sourceTree = "<group>"; };
+		2DD6D6A019875FC40081FD5B /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameData.h; path = Source/GameData.h; sourceTree = "<group>"; };
+		2DD6D6A119875FC40081FD5B /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameData.m; path = Source/GameData.m; sourceTree = "<group>"; };
 		65400FA919743FE200EDBBED /* MGWUMinigameInstructions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGWUMinigameInstructions.h; path = Source/MGWUMinigameInstructions.h; sourceTree = "<group>"; };
 		65400FAA19743FE200EDBBED /* MGWUMinigameInstructions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGWUMinigameInstructions.m; path = Source/MGWUMinigameInstructions.m; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
@@ -143,8 +152,14 @@
 				ED03BBDE1942561F00E23822 /* Backend */,
 				ED5FF05A19495F2F00571E13 /* MyCharacter.h */,
 				ED5FF05B19495F2F00571E13 /* MyCharacter.m */,
+				2DD6D6A019875FC40081FD5B /* GameData.h */,
+				2DD6D6A119875FC40081FD5B /* GameData.m */,
 				ED03BBE51942587100E23822 /* MyMinigame.h */,
 				ED03BBE61942587100E23822 /* MyMinigame.m */,
+				2DCA70C41986E1ED00308BF3 /* Diamond.h */,
+				2DAC09CE19898D6C00AA3709 /* DiamondScoreBoard.h */,
+				2DAC09CF19898D6C00AA3709 /* DiamondScoreBoard.m */,
+				2DCA70C51986E1ED00308BF3 /* Diamond.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -356,10 +371,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED03BBE31942563A00E23822 /* MGWUMinigame.m in Sources */,
+				2DD6D6A219875FC40081FD5B /* GameData.m in Sources */,
+				2DAC09D019898D6C00AA3709 /* DiamondScoreBoard.m in Sources */,
 				65400FAB19743FE200EDBBED /* MGWUMinigameInstructions.m in Sources */,
 				ED5C0B7A19479739000453EC /* MGWUCharacter.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				ED03BBE71942587100E23822 /* MyMinigame.m in Sources */,
+				2DCA70C61986E1ED00308BF3 /* Diamond.m in Sources */,
 				ED03BBE41942563A00E23822 /* MGWUTestGame.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				ED5FF05C19495F2F00571E13 /* MyCharacter.m in Sources */,
