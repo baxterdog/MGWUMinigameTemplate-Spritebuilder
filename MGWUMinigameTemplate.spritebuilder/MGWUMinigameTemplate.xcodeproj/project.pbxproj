@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DA24492198AD8C4003C2346 /* Buzzsaw.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA24491198AD8C4003C2346 /* Buzzsaw.m */; };
+		2DA24496198AD939003C2346 /* Spike.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA24495198AD939003C2346 /* Spike.m */; };
 		2DAC09D019898D6C00AA3709 /* DiamondScoreBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC09CF19898D6C00AA3709 /* DiamondScoreBoard.m */; };
 		2DCA70C61986E1ED00308BF3 /* Diamond.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA70C51986E1ED00308BF3 /* Diamond.m */; };
 		2DD6D6A219875FC40081FD5B /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6D6A119875FC40081FD5B /* GameData.m */; };
@@ -64,6 +66,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2DA24490198AD8C4003C2346 /* Buzzsaw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Buzzsaw.h; path = Source/Buzzsaw.h; sourceTree = "<group>"; };
+		2DA24491198AD8C4003C2346 /* Buzzsaw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Buzzsaw.m; path = Source/Buzzsaw.m; sourceTree = "<group>"; };
+		2DA24494198AD939003C2346 /* Spike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Spike.h; path = Source/Spike.h; sourceTree = "<group>"; };
+		2DA24495198AD939003C2346 /* Spike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Spike.m; path = Source/Spike.m; sourceTree = "<group>"; };
 		2DAC09CE19898D6C00AA3709 /* DiamondScoreBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiamondScoreBoard.h; path = Source/DiamondScoreBoard.h; sourceTree = "<group>"; };
 		2DAC09CF19898D6C00AA3709 /* DiamondScoreBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiamondScoreBoard.m; path = Source/DiamondScoreBoard.m; sourceTree = "<group>"; };
 		2DCA70C41986E1ED00308BF3 /* Diamond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Diamond.h; path = Source/Diamond.h; sourceTree = "<group>"; };
@@ -156,10 +162,14 @@
 				2DD6D6A119875FC40081FD5B /* GameData.m */,
 				ED03BBE51942587100E23822 /* MyMinigame.h */,
 				ED03BBE61942587100E23822 /* MyMinigame.m */,
+				2DA24490198AD8C4003C2346 /* Buzzsaw.h */,
+				2DA24491198AD8C4003C2346 /* Buzzsaw.m */,
+				2DA24494198AD939003C2346 /* Spike.h */,
+				2DA24495198AD939003C2346 /* Spike.m */,
 				2DCA70C41986E1ED00308BF3 /* Diamond.h */,
+				2DCA70C51986E1ED00308BF3 /* Diamond.m */,
 				2DAC09CE19898D6C00AA3709 /* DiamondScoreBoard.h */,
 				2DAC09CF19898D6C00AA3709 /* DiamondScoreBoard.m */,
-				2DCA70C51986E1ED00308BF3 /* Diamond.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -373,9 +383,11 @@
 				ED03BBE31942563A00E23822 /* MGWUMinigame.m in Sources */,
 				2DD6D6A219875FC40081FD5B /* GameData.m in Sources */,
 				2DAC09D019898D6C00AA3709 /* DiamondScoreBoard.m in Sources */,
+				2DA24496198AD939003C2346 /* Spike.m in Sources */,
 				65400FAB19743FE200EDBBED /* MGWUMinigameInstructions.m in Sources */,
 				ED5C0B7A19479739000453EC /* MGWUCharacter.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
+				2DA24492198AD8C4003C2346 /* Buzzsaw.m in Sources */,
 				ED03BBE71942587100E23822 /* MyMinigame.m in Sources */,
 				2DCA70C61986E1ED00308BF3 /* Diamond.m in Sources */,
 				ED03BBE41942563A00E23822 /* MGWUTestGame.m in Sources */,
