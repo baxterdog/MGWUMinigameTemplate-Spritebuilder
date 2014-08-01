@@ -23,7 +23,7 @@
 -(id)init {
     if ((self = [super init])) {
         // Initialize any arrays, dictionaries, etc in here
-        self.instructions = @"Jumpegypt by Mike";
+        self.instructions = @"Get the diamonds quick before you run out of time! Watch out for the spikes and the rotating buzz saw! You get 20 point per diamond for 5 diamond - 100 points total! Good Luck... and remember when you enter the game.. jump quick! OR DIE!!!";
     }
     GameData* data = [GameData sharedData];
     data.missionCriticalNumber = 0;
